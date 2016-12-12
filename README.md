@@ -12,6 +12,8 @@ My attempts to this years' [Advent of Code](http://adventofcode.com/2016) challe
 - [Two-Factor Authentication](Day 8)
 - [Explosives in Cyberspace](Day 9)
 - [Balance Bots](Day 10)
+- [Radioisotope Thermoelectric Generators](Day 11)
+- [Leonardo's Monorail](Day 12)
 
 ## License
 [WTF](LICENSE)
