@@ -12,3 +12,23 @@ func getInput() throws -> String {
     return input
 }
 
+func matchesNext(index: Int, in string: String) -> Bool {
+    return false
+}
+
+do {
+    let input = try getInput()
+    var sum = 0
+    for (index, char) in input.enumerated() {
+        let nextIndex = input.index(input.startIndex, offsetBy: index)
+        if char == input[nextIndex] {
+            sum += Int(String(char)) ?? 0
+        }
+    }
+    if input[input.index(input.startIndex, offsetBy: input.count-2)] == input[input.startIndex] {
+        sum += Int(String(input[input.startIndex])) ?? 0
+    }
+    print("The result is \(sum)")
+} catch let e {
+    print(e)
+}
