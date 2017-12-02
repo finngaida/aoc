@@ -25,7 +25,17 @@ do {
             sum += Int(String(char)) ?? 0
         }
     }
-    print("The result is \(sum)")
+    print("The first result is \(sum)")
+
+    sum = 0
+    for (index, char) in input.enumerated() {
+        let nextIndex = input.index(input.startIndex, offsetBy: (index+input.count/2) % input.count)
+        if char == input[nextIndex] {
+            sum += Int(String(char)) ?? 0
+        }
+    }
+    print("The second result is \(sum)")
+
 } catch let e {
     print(e)
 }
