@@ -19,8 +19,23 @@ do {
     let values = lines.map { $0.components(separatedBy: "    ").flatMap { Int($0) } }
 
     let final = values.map({ $0.max(by: <)! - $0.max(by: >)! }).reduce(0, +)
-
     print(final)
+
+    let final2 = values.map({ line in
+        let filtered = line.filter({ element in
+            line.reduce(false, { (previous, compare) in
+                if compare != element && max(element, compare) % min(element, compare) == 0 {
+                    return true
+                } else { return previous }
+            })
+        })
+
+        let a = filtered[0]
+        let b = filtered[1]
+        return max(a,b) / min(a,b)
+    }).reduce(0, +)
+
+    print(final2)
 } catch let e {
     print("Oops: \(e)")
 }
