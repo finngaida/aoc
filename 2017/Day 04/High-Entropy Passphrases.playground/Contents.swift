@@ -12,11 +12,15 @@ func getInput() throws -> String {
     return input
 }
 
+func isAnagram(_ first: String, _ second: String) -> Bool {
+    return Set(first) == Set(second)
+}
+
 func isValid(_ phrase: String) -> Bool {
     let words = phrase.components(separatedBy: " ")
     for (i, word) in words.enumerated() {
         for j in i+1..<words.count {
-            if word == words[j] {
+            if isAnagram(word, words[j]) {
                 return false
             }
         }
